@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <title>Chitwan Singh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Merriweather', 'serif'],
+                        'sans': ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        'warm-gray': {
+                            50: '#fafaf9',
+                            900: '#1c1917'
+                        },
+                        'accent': '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+        }
+
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .nav-dot {
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background-color: #f59e0b;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body class="bg-warm-gray-50 text-warm-gray-900 font-sans overflow-x-hidden">
+    <!-- Fixed Navigation Dots -->
+    <nav class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 space-y-3">
+        <a href="#hero" class="nav-dot block w-3 h-3 bg-gray-400 rounded-full hover:bg-accent cursor-pointer"
+            data-section="hero"></a>
+        <a href="#about" class="nav-dot block w-3 h-3 bg-gray-400 rounded-full hover:bg-accent cursor-pointer"
+            data-section="about"></a>
+        <a href="#work" class="nav-dot block w-3 h-3 bg-gray-400 rounded-full hover:bg-accent cursor-pointer"
+            data-section="work"></a>
+        <a href="#philosophy" class="nav-dot block w-3 h-3 bg-gray-400 rounded-full hover:bg-accent cursor-pointer"
+            data-section="philosophy"></a>
+        <a href="#contact" class="nav-dot block w-3 h-3 bg-gray-400 rounded-full hover:bg-accent cursor-pointer"
+            data-section="contact"></a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen gradient-bg flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="floating-animation">
+                <h1 class="text-6xl md:text-8xl font-serif font-light text-white mb-6">
+                    Chitwan Singh
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 font-light max-w-2xl mx-auto">
+                    Welcome to my humble abode!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-serif text-center mb-12 fade-in">About Me</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in">
+                        <p class="text-lg text-gray-600 leading-relaxed mb-6 text-justify">
+                            <br />
+                            <strong>
+                                I am a software developer, researcher, writer, and content creator interested in
+                                exploring
+                                the world through
+                                the intersection of philosophy, technology, creativity, and human experience.
+                                <br />
+                                I study
+                                computer science, but I also
+                                love diving into philosophy, media analysis, or anything else that helps me in
+                                understanding the world better.
+                            </strong>
+                        </p>
+                    </div>
+                    <div class="fade-in">
+                        <div class="bg-gradient-to-br from-accent to-orange-500 rounded-2xl p-8 text-white">
+                            <h3 class="text-2xl font-serif mb-4">Currently engaged in:</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                    Coding tools to make life easier
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                    Writing on philosophy and culture
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                    Learning about complicated topics
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Work Section -->
+    <section id="work" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-serif text-center mb-16 fade-in">My Stuff</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+
+                <!-- Projects Card -->
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover fade-in">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Projects</h3>
+                    <p class="text-gray-600 text-sm mb-4">Software repositories and tech experiments</p>
+                    <a href="https://github.com/chitwan27"
+                        class="text-accent hover:text-orange-600 font-medium text-sm flex items-center">
+                        View on My GitHub
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Writings Card -->
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover fade-in">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Writings</h3>
+                    <p class="text-gray-600 text-sm mb-4">Essays and reflections on society and life</p>
+                    <a href="https://chitwansingh.substack.com"
+                        class="text-accent hover:text-orange-600 font-medium text-sm flex items-center">
+                        Read on My Substack
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Notes Card -->
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover fade-in">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Notes</h3>
+                    <p class="text-gray-600 text-sm mb-4">Knowledge garden of the things I've learnt</p>
+                    <a href="https://notes.chitwansingh.rocks"
+                        class="text-accent hover:text-orange-600 font-medium text-sm flex items-center">
+                        Explore My Zettelkasten
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Youtube Card -->
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover fade-in">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="45"
+                                transform="scale(0.045)"
+                                d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728 c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137 C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607 c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Videos</h3>
+                    <p class="text-gray-600 text-sm mb-4">Some off-key remarks and/ or crazy insights</p>
+                    <a href="https://youtube.com/@chitwansingh"
+                        class="text-accent hover:text-orange-600 font-medium text-sm flex items-center">
+                        Visit My YouTube
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Philosophy Section -->
+    <section id="philosophy" class="py-20 bg-warm-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="fade-in">
+                    <svg class="w-16 h-16 text-accent mx-auto mb-8" fill="currentColor" viewBox="0 0 20 20">
+                        <path transform="scale(0.76)" fill-rule="evenodd"
+                            d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <blockquote class="text-3xl md:text-4xl font-serif font-light leading-relaxed mb-8">
+                        Just a human being trying to make sense of this world and help make it a better place.
+                    </blockquote>
+                    <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                        In my free time, you’ll find me geeking out over computer science, bingeing YouTube, or
+                        dreaming about creating something meaningful.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-serif mb-12 fade-in">Follow Me</h2>
+                <p class="text-xl text-gray-600 mb-12 fade-in max-w-2xl mx-auto">
+                    Feel free to reach out, or just follow me at these socials down below, I'd love to hear from you.
+                </p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+
+                    <!-- MyBlog-->
+                    <a href="https://blog.chitwansingh.rocks"
+                        class="bg-green-500 text-white p-6 rounded-xl card-hover fade-in group">
+                        <svg class="w-8 h-8 mx-auto mb-3 group-hover:scale-110 transition-transform" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path transform="scale(0.275)"
+                                d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30s30-13.432 30-30S48.568 2 32 2m-4.592 37.521c1.316 1.621 2.988 2.431 5.018 2.431c2.078 0 3.664-.695 4.756-2.086c.604-.748 1.104-1.87 1.502-3.366h6.023c-.52 3.163-1.848 5.735-3.982 7.717c-2.137 1.981-4.871 2.972-8.209 2.972c-4.129 0-7.375-1.338-9.736-4.016c-2.363-2.689-3.545-6.378-3.545-11.063c0-5.066 1.344-8.971 4.031-11.713c2.338-2.389 5.311-3.583 8.92-3.583c4.83 0 8.361 1.601 10.594 4.804c1.234 1.798 1.896 3.602 1.986 5.413h-6.063c-.387-1.392-.881-2.44-1.484-3.149c-1.08-1.26-2.682-1.891-4.803-1.891c-2.16 0-3.863.89-5.111 2.668c-1.246 1.778-1.869 4.295-1.869 7.549c0 3.254.658 5.691 1.972 7.313">
+                            </path>
+                            </path>
+                        </svg>
+
+                        <span class="font-medium">My Blog</span>
+                    </a>
+
+                    <!-- Linkedin -->
+                    <a href="https://www.linkedin.com/in/chitwan27"
+                        class="bg-violet-500 text-white p-6 rounded-xl card-hover fade-in group">
+                        <svg class="w-8 h-8 mx-auto mb-3 group-hover:scale-110 transition-transform" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path transform="scale(0.045)"
+                                d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z">
+                            </path>
+                        </svg>
+                        <span class="font-medium">Linkedin</span>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/chitwan2718"
+                        class="bg-rose-500 text-white p-6 rounded-xl card-hover fade-in group">
+                        <svg class="w-8 h-8 mx-auto mb-3 group-hover:scale-110 transition-transform" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path transform="scale(0.7)"
+                                d="M20.445 5h-8.891A6.559 6.559 0 0 0 5 11.554v8.891A6.559 6.559 0 0 0 11.554 27h8.891a6.56 6.56 0 0 0 6.554-6.555v-8.891A6.557 6.557 0 0 0 20.445 5zm4.342 15.445a4.343 4.343 0 0 1-4.342 4.342h-8.891a4.341 4.341 0 0 1-4.341-4.342v-8.891a4.34 4.34 0 0 1 4.341-4.341h8.891a4.342 4.342 0 0 1 4.341 4.341l.001 8.891z">
+                            </path>
+                            <path transform="scale(0.7)"
+                                d="M16 10.312c-3.138 0-5.688 2.551-5.688 5.688s2.551 5.688 5.688 5.688 5.688-2.551 5.688-5.688-2.55-5.688-5.688-5.688zm0 9.163a3.475 3.475 0 1 1-.001-6.95 3.475 3.475 0 0 1 .001 6.95zM21.7 8.991a1.363 1.363 0 1 1-1.364 1.364c0-.752.51-1.364 1.364-1.364z">
+                            </path>
+                        </svg>
+                        <span class="font-medium">Instagram</span>
+                    </a>
+
+                    <!-- Bluesky -->
+                    <a href="https://bsky.app/profile/chitwansingh.rocks"
+                        class="bg-blue-500 text-white p-6 rounded-xl card-hover fade-in group">
+                        <svg class="w-8 h-8 mx-auto mb-3 group-hover:scale-110 transition-transform" fill="white"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path transform="scale(0.7)"
+                                d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565C.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479c.815 2.736 3.713 3.66 6.383 3.364c.136-.02.275-.039.415-.056c-.138.022-.276.04-.415.056c-3.912.58-7.387 2.005-2.83 7.078c5.013 5.19 6.87-1.113 7.823-4.308c.953 3.195 2.05 9.271 7.733 4.308c4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056c2.67.297 5.568-.628 6.383-3.364c.246-.828.624-5.79.624-6.478c0-.69-.139-1.861-.902-2.206c-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8">
+                            </path>
+                        </svg>
+                        <span class="font-medium">Bluesky</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-warm-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-serif text-lg mb-2">j5x6g06iq@mozmail.com</p>
+            <p class="text-sm">© 2025 • Chitwan Singh</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navigation dots active state
+        const sections = document.querySelectorAll('section');
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    navDots.forEach(dot => {
+                        dot.classList.remove('active');
+                        if (dot.getAttribute('data-section') === sectionId) {
+                            dot.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Smooth scrolling for navigation dots
+        navDots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = dot.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+
+</html>
